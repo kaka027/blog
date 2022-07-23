@@ -202,10 +202,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../test/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       房贷计算
     </a>
   </li>
@@ -306,11 +308,48 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../test/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          房贷计算
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         房贷计算
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    测试安装情况
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -484,21 +523,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    首付
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    等额本息
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    等额本金
+    测试安装情况
   </a>
   
 </li>
@@ -519,159 +544,11 @@
 
   <h1>房贷计算</h1>
 
-<h3 id="_1">首付</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">price</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;总价/万：&#39;</span><span class="p">))</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">mianji</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;面积 1：小于90平 2：大于90平：&#39;</span><span class="p">))</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">qishui</span> <span class="o">=</span> <span class="p">(</span><span class="n">price</span> <span class="o">*</span> <span class="mf">0.01</span> <span class="k">if</span> <span class="n">mianji</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.015</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">weiyi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;是否满五唯一；1：是；2:不是： &#39;</span><span class="p">))</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">geshui</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">weiyi</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.01</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">zzs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;1:无增值税；2：不满2年/满二不唯一&#39;</span><span class="p">))</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">zengzhishui</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">zzs</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">price</span><span class="o">*</span><span class="mf">0.05</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">zhongjie</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.015</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">shoufu</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.3</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">sum_shoufu</span> <span class="o">=</span> <span class="n">shoufu</span> <span class="o">+</span> <span class="n">qishui</span> <span class="o">+</span> <span class="n">geshui</span> <span class="o">+</span> <span class="n">zengzhishui</span> <span class="o">+</span> <span class="n">zhongjie</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;总价&#39;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span> <span class="s1">&#39;契税&#39;</span><span class="p">:</span> <span class="n">qishui</span><span class="p">,</span> <span class="s1">&#39;个税&#39;</span><span class="p">:</span> <span class="n">geshui</span><span class="p">,</span> <span class="s1">&#39;中介费&#39;</span><span class="p">:</span> <span class="n">zhongjie</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                  <span class="s1">&#39;增值税&#39;</span><span class="p">:</span> <span class="n">zengzhishui</span><span class="p">,</span> <span class="s1">&#39;首付&#39;</span><span class="p">:</span> <span class="n">shoufu</span><span class="p">,</span> <span class="s1">&#39;首付总额&#39;</span><span class="p">:</span> <span class="n">sum_shoufu</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">])</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">df</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>总价/万：240
-面积 1：小于90平 2：大于90平：1
-是否满五唯一；1：是；2:不是： 1
-1:无增值税；2：不满2年/满二不唯一1
-</code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>总价</th>
-      <th>契税</th>
-      <th>个税</th>
-      <th>中介费</th>
-      <th>增值税</th>
-      <th>首付</th>
-      <th>首付总额</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>240</td>
-      <td>2.4</td>
-      <td>0</td>
-      <td>3.6</td>
-      <td>0</td>
-      <td>72.0</td>
-      <td>78.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="_2">等额本息</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">daikuan</span> <span class="o">=</span> <span class="n">price</span><span class="o">*</span><span class="mf">0.7</span><span class="o">*</span><span class="mi">10000</span><span class="p">;</span><span class="n">yueli</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;商业贷款年利率： &#39;</span><span class="p">))</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span><span class="n">month</span> <span class="o">=</span> <span class="mi">360</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">meiyue</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">daikuan</span> <span class="o">*</span> <span class="n">yueli</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">yueli</span><span class="p">)</span> <span class="o">**</span> <span class="n">month</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">yueli</span><span class="p">)</span><span class="o">**</span><span class="n">month</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">lixi</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">meiyue</span> <span class="o">*</span> <span class="n">month</span> <span class="o">-</span> <span class="n">daikuan</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">sum_daikuan</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">daikuan</span><span class="o">+</span><span class="n">lixi</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">daikuan1</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">daikuan</span><span class="o">/</span><span class="mi">10000</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;万&#39;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">bx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;贷款总额&#39;</span><span class="p">:</span><span class="n">daikuan1</span><span class="p">,</span><span class="s1">&#39;每月应还&#39;</span><span class="p">:</span><span class="n">meiyue</span><span class="p">,</span><span class="s1">&#39;利息总额&#39;</span><span class="p">:</span><span class="n">lixi</span><span class="p">,</span><span class="s1">&#39;还款总额&#39;</span><span class="p">:</span><span class="n">sum_daikuan</span><span class="p">},</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,])</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">bx</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>商业贷款年利率： 5
-</code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>贷款总额</th>
-      <th>每月应还</th>
-      <th>利息总额</th>
-      <th>还款总额</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>168.0万</td>
-      <td>9018.6</td>
-      <td>1566696.0</td>
-      <td>3246696.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="_3">等额本金</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">bj_m_price</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">daikuan</span><span class="o">/</span><span class="n">month</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">daikuan</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="n">yueli</span><span class="p">),</span><span class="mi">2</span><span class="p">);</span><span class="n">sum_lixi</span> <span class="o">=</span> <span class="n">month</span><span class="o">*</span><span class="p">(</span><span class="n">daikuan</span><span class="o">*</span><span class="n">yueli</span><span class="o">-</span><span class="n">yueli</span><span class="o">*</span><span class="p">(</span><span class="n">daikuan</span><span class="o">/</span><span class="n">month</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">month</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">daikuan</span><span class="o">/</span><span class="n">month</span><span class="p">);</span><span class="n">bj_lixi</span> <span class="o">=</span> <span class="n">sum_lixi</span> <span class="o">-</span> <span class="n">daikuan</span><span class="p">;</span><span class="n">m_jian</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">bj_m_price</span><span class="o">*</span><span class="n">yueli</span><span class="p">),</span><span class="mi">2</span><span class="p">);</span><span class="n">bj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;贷款总额&#39;</span><span class="p">:</span><span class="n">daikuan1</span><span class="p">,</span><span class="s1">&#39;首月应还&#39;</span><span class="p">:</span><span class="n">bj_m_price</span><span class="p">,</span><span class="s1">&#39;总利息&#39;</span><span class="p">:</span><span class="n">bj_lixi</span><span class="p">,</span><span class="s1">&#39;每月还款递减&#39;</span><span class="p">:</span><span class="n">m_jian</span><span class="p">,</span><span class="s1">&#39;还款总额&#39;</span><span class="p">:</span><span class="n">sum_lixi</span><span class="p">},</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,]);</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">bj</span>
-</code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>贷款总额</th>
-      <th>首月应还</th>
-      <th>总利息</th>
-      <th>每月还款递减</th>
-      <th>还款总额</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>168.0万</td>
-      <td>11666.67</td>
-      <td>1263500.0</td>
-      <td>48.61</td>
-      <td>2943500.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+<h4 id="_1">测试安装情况</h4>
+<p>打开你的「终端」（打开 启动台 搜索可以找到），你可以依次输入以下命令（每行是一个命令，注意输入时的空格、拼写、大小写不要出错，所有的 version 前面都是有两个 - 的）验证下是否安装成功：开你的「终端」（打开 启动台 搜索可以找到），你可以依次输入以下命令（每行是一个命令，注意输入时的空格、拼写、大小写不要出错，所有的 version 前面都是有两个 - 的）验证下是否安装成功：开你的「终端」（打开 启动台 搜索可以找到），你可以依次输入以下命令（每行是一个命令，注意输入时的空格、拼写、大小写不要出错，所有的 version 前面都是有两个 - 的）验证下是否安装成功：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
 </code></pre></div>
 
               
@@ -688,6 +565,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="上一页: home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据类型" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              数据类型
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
