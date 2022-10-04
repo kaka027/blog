@@ -1,0 +1,2140 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>四、分组 - kaka's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="kaka&#39;s blog" class="md-header__button md-logo" aria-label="kaka's blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kaka's blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              四、分组
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../programming/python/variable/" class="md-tabs__link">
+        python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../programming/web/html/" class="md-tabs__link">
+        web开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../part1/" class="md-tabs__link md-tabs__link--active">
+        pandas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toolbox/mkdocs/" class="md-tabs__link">
+        工具箱
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kaka&#39;s blog" class="md-nav__button md-logo" aria-label="kaka's blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    kaka's blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/variable/" class="md-nav__link">
+        变量类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/string/" class="md-nav__link">
+        字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/tuple/" class="md-nav__link">
+        元组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/list/" class="md-nav__link">
+        列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/dict/" class="md-nav__link">
+        字典
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/set/" class="md-nav__link">
+        集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/derivation/" class="md-nav__link">
+        推导式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/operator/" class="md-nav__link">
+        运算符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/if-else/" class="md-nav__link">
+        逻辑判断
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/cycle/" class="md-nav__link">
+        循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/iterator/" class="md-nav__link">
+        迭代器/生成器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/function/" class="md-nav__link">
+        定义函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/parameter/" class="md-nav__link">
+        函数传参
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/return/" class="md-nav__link">
+        函数返回值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/partial/" class="md-nav__link">
+        偏函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/recursion/" class="md-nav__link">
+        递归
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/global/" class="md-nav__link">
+        变量作用域
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/lambda/" class="md-nav__link">
+        闭包和匿名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/built-in-func/" class="md-nav__link">
+        内置函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/decorator/" class="md-nav__link">
+        装饰器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/class/" class="md-nav__link">
+        面向对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/method/" class="md-nav__link">
+        类方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/class-attribute/" class="md-nav__link">
+        类变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/inherit/" class="md-nav__link">
+        继承
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/package/" class="md-nav__link">
+        封装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/polymorphism/" class="md-nav__link">
+        多态
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/module/" class="md-nav__link">
+        模块
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          web开发
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="web开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          web开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/html/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/css-select/" class="md-nav__link">
+        CSS选择器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/css-style/" class="md-nav__link">
+        CSS样式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/js/" class="md-nav__link">
+        JS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/JQuery/" class="md-nav__link">
+        JQuery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/mysql-install/" class="md-nav__link">
+        mysql安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/mysql-base/" class="md-nav__link">
+        mysql基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/django-create/" class="md-nav__link">
+        django创建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/ORM/" class="md-nav__link">
+        ORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/form/" class="md-nav__link">
+        模板语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/pagination/" class="md-nav__link">
+        分页
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/middleware/" class="md-nav__link">
+        中间件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/ajax/" class="md-nav__link">
+        Ajax
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          pandas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="pandas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          pandas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part1/" class="md-nav__link">
+        一、Python基础知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part2/" class="md-nav__link">
+        二、pandas基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part3/" class="md-nav__link">
+        三、索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          四、分组
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        四、分组
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、分组模式及其对象
+  </a>
+  
+    <nav class="md-nav" aria-label="一、分组模式及其对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 分组的一般模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 分组依据的本质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-groupby" class="md-nav__link">
+    3. Groupby 对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 分组的三大操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、聚合函数
+  </a>
+  
+    <nav class="md-nav" aria-label="二、聚合函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 内置聚合函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-agg" class="md-nav__link">
+    2. agg 方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、变换和过滤
+  </a>
+  
+    <nav class="md-nav" aria-label="三、变换和过滤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-transform" class="md-nav__link">
+    1. 变换函数与 transform 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 组索引与过滤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、跨列分组
+  </a>
+  
+    <nav class="md-nav" aria-label="四、跨列分组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-apply" class="md-nav__link">
+    1. apply 的引入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-apply" class="md-nav__link">
+    2. apply 的使用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、练习
+  </a>
+  
+    <nav class="md-nav" aria-label="五、练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex1" class="md-nav__link">
+    Ex1：汽车数据集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex2-transform" class="md-nav__link">
+    Ex2：实现 transform 函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part5/" class="md-nav__link">
+        五、变形
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part6/" class="md-nav__link">
+        六、连接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part7/" class="md-nav__link">
+        七、缺失数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part8/" class="md-nav__link">
+        八、文本数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part9/" class="md-nav__link">
+        九、分类数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part10/" class="md-nav__link">
+        十、时序数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../answer/" class="md-nav__link">
+        参考答案
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          工具箱
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="工具箱" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          工具箱
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toolbox/mkdocs/" class="md-nav__link">
+        mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toolbox/venv/" class="md-nav__link">
+        python虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、分组模式及其对象
+  </a>
+  
+    <nav class="md-nav" aria-label="一、分组模式及其对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 分组的一般模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 分组依据的本质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-groupby" class="md-nav__link">
+    3. Groupby 对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 分组的三大操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、聚合函数
+  </a>
+  
+    <nav class="md-nav" aria-label="二、聚合函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 内置聚合函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-agg" class="md-nav__link">
+    2. agg 方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、变换和过滤
+  </a>
+  
+    <nav class="md-nav" aria-label="三、变换和过滤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-transform" class="md-nav__link">
+    1. 变换函数与 transform 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 组索引与过滤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、跨列分组
+  </a>
+  
+    <nav class="md-nav" aria-label="四、跨列分组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-apply" class="md-nav__link">
+    1. apply 的引入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-apply" class="md-nav__link">
+    2. apply 的使用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、练习
+  </a>
+  
+    <nav class="md-nav" aria-label="五、练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex1" class="md-nav__link">
+    Ex1：汽车数据集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex2-transform" class="md-nav__link">
+    Ex2：实现 transform 函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>四、分组</h1>
+
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</code></pre></div>
+<h2 id="_1">一、分组模式及其对象</h2>
+<h3 id="1">1. 分组的一般模式</h3>
+<p>分组操作在日常生活中使用极其广泛，例如：</p>
+<ul>
+<li>
+<p>依据 <strong>性别</strong> 分组，统计全国人口 <strong>寿命</strong> 的 <strong>平均值</strong></p>
+</li>
+<li>
+<p>依据 <strong>季节</strong> 分组，对每一个季节的 <strong>温度</strong> 进行 <strong>组内标准化</strong></p>
+</li>
+<li>
+<p>依据 <strong>班级</strong> 分组，筛选出组内 <strong>数学分数</strong> 的 <strong>平均值超过 80 分的班级</strong></p>
+</li>
+</ul>
+<p>从上述的几个例子中不难看出，想要实现分组操作，必须明确三个要素：<strong>分组依据</strong> 、 <strong>数据来源</strong> 、 <strong>操作及其返回结果</strong> 。同时从充分性的角度来说，如果明确了这三方面，就能确定一个分组操作，从而分组代码的一般模式即：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">分组依据</span><span class="p">)[</span><span class="n">数据来源</span><span class="p">]</span><span class="o">.</span><span class="n">使用操作</span>
+</code></pre></div>
+<p>例如第一个例子中的代码就应该如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[</span><span class="s1">&#39;Longevity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<p>现在返回到学生体测的数据集上，如果想要按照性别统计身高中位数，就可以如下写出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/learn_pandas.csv&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> 
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">Gender</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">Female</span>    <span class="mf">159.6</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">Male</span>      <span class="mf">173.4</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<h3 id="2">2. 分组依据的本质</h3>
+<p>前面提到的若干例子都是以单一维度进行分组的，比如根据性别，如果现在需要根据多个维度进行分组，该如何做？事实上，只需在 <code>groupby</code> 中传入相应列名构成的列表即可。例如，现希望根据学校和性别进行分组，统计身高的均值就可以如下写出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">])[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> 
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">School</span>                         <span class="n">Gender</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">Fudan</span> <span class="n">University</span>               <span class="n">Female</span>    <span class="mf">158.776923</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                               <span class="n">Male</span>      <span class="mf">174.212500</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">Peking</span> <span class="n">University</span>              <span class="n">Female</span>    <span class="mf">158.666667</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                               <span class="n">Male</span>      <span class="mf">172.030000</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">Shanghai</span> <span class="n">Jiao</span> <span class="n">Tong</span> <span class="n">University</span>  <span class="n">Female</span>    <span class="mf">159.122500</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                               <span class="n">Male</span>      <span class="mf">176.760000</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">Tsinghua</span> <span class="n">University</span>            <span class="n">Female</span>    <span class="mf">159.753333</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>                               <span class="n">Male</span>      <span class="mf">171.638889</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>目前为止， <code>groupby</code> 的分组依据都是直接可以从列中按照名字获取的，那如果希望通过一定的复杂逻辑来分组，例如根据学生体重是否超过总体均值来分组，同样还是计算身高的均值。</p>
+<p>首先应该先写出分组条件：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Weight</span> <span class="o">&gt;</span> <span class="n">df</span><span class="o">.</span><span class="n">Weight</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<p>然后将其传入 <code>groupby</code> 中：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">condition</span><span class="p">)[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> 
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">Weight</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kc">False</span>    <span class="mf">159.034646</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kc">True</span>     <span class="mf">172.705357</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>请根据上下四分位数分割，将体重分为 high、normal、low 三组，统计身高的均值。</p>
+</p>
+</div>
+<p>从索引可以看出，其实最后产生的结果就是按照条件列表中元素的值（此处是 <code>True</code> 和 <code>False</code> ）来分组，下面用随机传入字母序列来验证这一想法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">item</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">),</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">item</span><span class="p">)[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> 
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">a</span>    <span class="mf">163.924242</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">b</span>    <span class="mf">162.928814</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">c</span>    <span class="mf">162.708621</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>此处的索引就是原先 item 中的元素，如果传入多个序列进入 <code>groupby</code> ，那么最后分组的依据就是这两个序列对应行的唯一组合：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">condition</span><span class="p">,</span> <span class="n">item</span><span class="p">])[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> 
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">Weight</span>   
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kc">False</span>   <span class="n">a</span>    <span class="mf">160.193617</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        <span class="n">b</span>    <span class="mf">158.921951</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">c</span>    <span class="mf">157.756410</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kc">True</span>    <span class="n">a</span>    <span class="mf">173.152632</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="n">b</span>    <span class="mf">172.055556</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="n">c</span>    <span class="mf">172.873684</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>由此可以看出，之前传入列名只是一种简便的记号，事实上等价于传入的是一个或多个列，最后分组的依据来自于数据来源组合的 unique 值，通过 <code>drop_duplicates</code> 就能知道具体的组类别：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> 
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>                           <span class="n">School</span>  <span class="n">Gender</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="mi">0</span>   <span class="n">Shanghai</span> <span class="n">Jiao</span> <span class="n">Tong</span> <span class="n">University</span>  <span class="n">Female</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="mi">1</span>               <span class="n">Peking</span> <span class="n">University</span>    <span class="n">Male</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="mi">2</span>   <span class="n">Shanghai</span> <span class="n">Jiao</span> <span class="n">Tong</span> <span class="n">University</span>    <span class="n">Male</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="mi">3</span>                <span class="n">Fudan</span> <span class="n">University</span>  <span class="n">Female</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="mi">4</span>                <span class="n">Fudan</span> <span class="n">University</span>    <span class="n">Male</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="mi">5</span>             <span class="n">Tsinghua</span> <span class="n">University</span>  <span class="n">Female</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="mi">9</span>               <span class="n">Peking</span> <span class="n">University</span>  <span class="n">Female</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="mi">16</span>            <span class="n">Tsinghua</span> <span class="n">University</span>    <span class="n">Male</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;School&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">]])[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> 
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">School</span>                         <span class="n">Gender</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="n">Fudan</span> <span class="n">University</span>               <span class="n">Female</span>    <span class="mf">158.776923</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>                               <span class="n">Male</span>      <span class="mf">174.212500</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="n">Peking</span> <span class="n">University</span>              <span class="n">Female</span>    <span class="mf">158.666667</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>                               <span class="n">Male</span>      <span class="mf">172.030000</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="n">Shanghai</span> <span class="n">Jiao</span> <span class="n">Tong</span> <span class="n">University</span>  <span class="n">Female</span>    <span class="mf">159.122500</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>                               <span class="n">Male</span>      <span class="mf">176.760000</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="n">Tsinghua</span> <span class="n">University</span>            <span class="n">Female</span>    <span class="mf">159.753333</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>                               <span class="n">Male</span>      <span class="mf">171.638889</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<h3 id="3-groupby">3. Groupby 对象</h3>
+<p>能够注意到，最终具体做分组操作时，所调用的方法都来自于 <code>pandas</code> 中的 <code>groupby</code> 对象，这个对象上定义了许多方法，也具有一些方便的属性。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Grade&#39;</span><span class="p">])</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">gb</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">groupby</span><span class="o">.</span><span class="n">generic</span><span class="o">.</span><span class="n">DataFrameGroupBy</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000013630DAB910</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>通过 <code>ngroups</code> 属性，可以得到分组个数：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">ngroups</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="mi">16</span>
+</code></pre></div>
+<p>通过 <code>groups</code> 属性，可以返回从 组名 映射到 组索引列表 的字典：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">gb</span><span class="o">.</span><span class="n">groups</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="c1"># 字典的值由于是索引，元素个数过多，此处只展示字典的键</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">dict_keys</span><span class="p">([(</span><span class="s1">&#39;Fudan University&#39;</span><span class="p">,</span> <span class="s1">&#39;Freshman&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fudan University&#39;</span><span class="p">,</span> <span class="s1">&#39;Junior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fudan University&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fudan University&#39;</span><span class="p">,</span> <span class="s1">&#39;Sophomore&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Peking University&#39;</span><span class="p">,</span> <span class="s1">&#39;Freshman&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Peking University&#39;</span><span class="p">,</span> <span class="s1">&#39;Junior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Peking University&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Peking University&#39;</span><span class="p">,</span> <span class="s1">&#39;Sophomore&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Shanghai Jiao Tong University&#39;</span><span class="p">,</span> <span class="s1">&#39;Freshman&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Shanghai Jiao Tong University&#39;</span><span class="p">,</span> <span class="s1">&#39;Junior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Shanghai Jiao Tong University&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Shanghai Jiao Tong University&#39;</span><span class="p">,</span> <span class="s1">&#39;Sophomore&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Tsinghua University&#39;</span><span class="p">,</span> <span class="s1">&#39;Freshman&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Tsinghua University&#39;</span><span class="p">,</span> <span class="s1">&#39;Junior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Tsinghua University&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Tsinghua University&#39;</span><span class="p">,</span> <span class="s1">&#39;Sophomore&#39;</span><span class="p">)])</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>上一小节介绍了可以通过 <code>drop_duplicates</code> 得到具体的组类别，现请用 <code>groups</code> 属性完成类似的功能。</p>
+</p>
+</div>
+<p>当 <code>size</code> 作为 <code>DataFrame</code> 的属性时，返回的是表长乘以表宽的大小，但在 <code>groupby</code> 对象上表示统计每个组的元素个数：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> 
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">School</span>                         <span class="n">Grade</span>    
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">Fudan</span> <span class="n">University</span>               <span class="n">Freshman</span>      <span class="mi">9</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>                               <span class="n">Junior</span>       <span class="mi">12</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>                               <span class="n">Senior</span>       <span class="mi">11</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>                               <span class="n">Sophomore</span>     <span class="mi">8</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">Peking</span> <span class="n">University</span>              <span class="n">Freshman</span>     <span class="mi">13</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>                               <span class="n">Junior</span>        <span class="mi">8</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>                               <span class="n">Senior</span>        <span class="mi">8</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>                               <span class="n">Sophomore</span>     <span class="mi">5</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="n">Shanghai</span> <span class="n">Jiao</span> <span class="n">Tong</span> <span class="n">University</span>  <span class="n">Freshman</span>     <span class="mi">13</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>                               <span class="n">Junior</span>       <span class="mi">17</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>                               <span class="n">Senior</span>       <span class="mi">22</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>                               <span class="n">Sophomore</span>     <span class="mi">5</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="n">Tsinghua</span> <span class="n">University</span>            <span class="n">Freshman</span>     <span class="mi">17</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>                               <span class="n">Junior</span>       <span class="mi">22</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>                               <span class="n">Senior</span>       <span class="mi">14</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>                               <span class="n">Sophomore</span>    <span class="mi">16</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+</code></pre></div>
+<p>通过 <code>get_group</code> 方法可以直接获取所在组对应的行，此时必须知道组的具体名字：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="s1">&#39;Fudan University&#39;</span><span class="p">,</span> <span class="s1">&#39;Freshman&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># 展示一部分</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">19</span><span class="p">]:</span> 
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>              <span class="n">School</span>     <span class="n">Grade</span>             <span class="n">Name</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="mi">15</span>  <span class="n">Fudan</span> <span class="n">University</span>  <span class="n">Freshman</span>  <span class="n">Changqiang</span> <span class="n">Yang</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="mi">28</span>  <span class="n">Fudan</span> <span class="n">University</span>  <span class="n">Freshman</span>     <span class="n">Gaoqiang</span> <span class="n">Qin</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="mi">63</span>  <span class="n">Fudan</span> <span class="n">University</span>  <span class="n">Freshman</span>     <span class="n">Gaofeng</span> <span class="n">Zhao</span>
+</code></pre></div>
+<p>这里列出了 2 个属性和 2 个方法，而先前的 <code>mean</code> 、 <code>median</code> 都是 <code>groupby</code> 对象上的方法，这些函数和许多其他函数的操作具有高度相似性，将在之后的小节进行专门介绍。</p>
+<h3 id="4">4. 分组的三大操作</h3>
+<p>熟悉了一些分组的基本知识后，重新回到开头举的三个例子，可能会发现一些端倪，即这三种类型分组返回的数据型态并不一样：</p>
+<ul>
+<li>
+<p>第一个例子中，每一个组返回一个标量值，可以是平均值、中位数、组容量 <code>size</code> 等</p>
+</li>
+<li>
+<p>第二个例子中，做了原序列的标准化处理，也就是说每组返回的是一个 <code>Series</code> 类型</p>
+</li>
+<li>
+<p>第三个例子中，既不是标量也不是序列，返回的整个组所在行的本身，即返回了 <code>DataFrame</code> 类型</p>
+</li>
+</ul>
+<p>由此，引申出分组的三大操作：聚合、变换和过滤，分别对应了三个例子的操作，下面就要分别介绍相应的 <code>agg</code> 、 <code>transform</code> 和 <code>filter</code> 函数及其操作。</p>
+<h2 id="_2">二、聚合函数</h2>
+<h3 id="1_1">1. 内置聚合函数</h3>
+<p>在介绍 agg 之前，首先要了解一些直接定义在 groupby 对象的聚合函数，因为它的速度基本都会经过内部的优化，使用功能时应当优先考虑。根据返回标量值的原则，包括如下函数： <code>max/min/mean/median/count/all/any/idxmax/idxmin/mad/nunique/skew/quantile/sum/std/var/sem/size/prod</code> 。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> 
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">Gender</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">Female</span>    <span class="mi">143</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="n">Male</span>      <span class="mi">199</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> 
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="n">Gender</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="n">Female</span>    <span class="mf">166.8</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="n">Male</span>      <span class="mf">185.9</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>请查阅文档，明确 <code>all/any/mad/skew/sem/prod</code> 函数的含义。</p>
+</p>
+</div>
+<p>这些聚合函数当传入的数据来源包含多个列时，将按照列进行迭代计算：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[[</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">]]</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> 
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>        <span class="n">Height</span>  <span class="n">Weight</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">Gender</span>                
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">Female</span>   <span class="mf">170.2</span>    <span class="mf">63.0</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">Male</span>     <span class="mf">193.9</span>    <span class="mf">89.0</span>
+</code></pre></div>
+<h3 id="2-agg">2. agg 方法</h3>
+<p>虽然在 <code>groupby</code> 对象上定义了许多方便的函数，但仍然有以下不便之处：</p>
+<ul>
+<li>
+<p>无法同时使用多个函数</p>
+</li>
+<li>
+<p>无法对特定的列使用特定的聚合函数</p>
+</li>
+<li>
+<p>无法使用自定义的聚合函数</p>
+</li>
+<li>
+<p>无法直接对结果的列名在聚合前进行自定义命名</p>
+</li>
+</ul>
+<p>下面说明如何通过 <code>agg</code> 函数解决这四类问题：</p>
+<p>【a】使用多个函数</p>
+<p>当使用多个聚合函数时，需要用列表的形式把内置聚合函数对应的字符串传入，先前提到的所有字符串都是合法的。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;idxmax&#39;</span><span class="p">,</span> <span class="s1">&#39;skew&#39;</span><span class="p">])</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> 
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>         <span class="n">Height</span>                   <span class="n">Weight</span>                 
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>            <span class="nb">sum</span> <span class="n">idxmax</span>      <span class="n">skew</span>     <span class="nb">sum</span> <span class="n">idxmax</span>      <span class="n">skew</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">Gender</span>                                                   
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">Female</span>  <span class="mf">21014.0</span>     <span class="mi">28</span> <span class="o">-</span><span class="mf">0.219253</span>  <span class="mf">6469.0</span>     <span class="mi">28</span> <span class="o">-</span><span class="mf">0.268482</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">Male</span>     <span class="mf">8854.9</span>    <span class="mi">193</span>  <span class="mf">0.437535</span>  <span class="mf">3929.0</span>      <span class="mi">2</span> <span class="o">-</span><span class="mf">0.332393</span>
+</code></pre></div>
+<p>从结果看，此时的列索引为多级索引，第一层为数据源，第二层为使用的聚合方法，分别逐一对列使用聚合，因此结果为 6 列。</p>
+<p>【b】对特定的列使用特定的聚合函数</p>
+<p>对于方法和列的特殊对应，可以通过构造字典传入 <code>agg</code> 中实现，其中字典以列名为键，以聚合字符串或字符串列表为值。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Height&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">],</span> <span class="s1">&#39;Weight&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">})</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> 
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>           <span class="n">Height</span>        <span class="n">Weight</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>             <span class="n">mean</span>    <span class="nb">max</span>  <span class="n">count</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">Gender</span>                         
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">Female</span>  <span class="mf">159.19697</span>  <span class="mf">170.2</span>    <span class="mi">135</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">Male</span>    <span class="mf">173.62549</span>  <span class="mf">193.9</span>     <span class="mi">54</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>请使用【b】中的传入字典的方法完成【a】中等价的聚合任务。</p>
+</p>
+</div>
+<p>【c】使用自定义函数</p>
+<p>在 <code>agg</code> 中可以使用具体的自定义函数， 需要注意传入函数的参数是之前数据源中的列，逐列进行计算 。下面分组计算身高和体重的极差：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> 
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>        <span class="n">Height</span>  <span class="n">Weight</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">Gender</span>                
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">Female</span>    <span class="mf">24.8</span>    <span class="mf">29.0</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="n">Male</span>      <span class="mf">38.2</span>    <span class="mf">38.0</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>在 <code>groupby</code> 对象中可以使用 <code>describe</code> 方法进行统计信息汇总，请同时使用多个聚合函数，完成与该方法相同的功能。</p>
+</p>
+</div>
+<p>由于传入的是序列，因此序列上的方法和属性都是可以在函数中使用的，只需保证返回值是标量即可。下面的例子是指，如果组的指标均值，超过该指标的总体均值，返回 High，否则返回 Low。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">....</span><span class="p">:</span>     <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;High&#39;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>   <span class="o">....</span><span class="p">:</span>     <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">df</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">():</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>   <span class="o">....</span><span class="p">:</span>         <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;Low&#39;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">res</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">my_func</span><span class="p">)</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> 
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>       <span class="n">Height</span> <span class="n">Weight</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="n">Gender</span>              
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="n">Female</span>    <span class="n">Low</span>    <span class="n">Low</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="n">Male</span>     <span class="n">High</span>   <span class="n">High</span>
+</code></pre></div>
+<p>【d】聚合结果重命名</p>
+<p>如果想要对聚合结果的列名进行重命名，只需要将上述函数的位置改写成元组，元组的第一个元素为新的名字，第二个位置为原来的函数，包括聚合字符串和自定义函数，现举若干例子说明：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">([(</span><span class="s1">&#39;range&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;my_sum&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)])</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> 
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>       <span class="n">Height</span>          <span class="n">Weight</span>        
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>        <span class="nb">range</span>   <span class="n">my_sum</span>  <span class="nb">range</span>  <span class="n">my_sum</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="n">Gender</span>                               
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="n">Female</span>   <span class="mf">24.8</span>  <span class="mf">21014.0</span>   <span class="mf">29.0</span>  <span class="mf">6469.0</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="n">Male</span>     <span class="mf">38.2</span>   <span class="mf">8854.9</span>   <span class="mf">38.0</span>  <span class="mf">3929.0</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Height&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;my_func&#39;</span><span class="p">,</span> <span class="n">my_func</span><span class="p">),</span> <span class="s1">&#39;sum&#39;</span><span class="p">],</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">....</span><span class="p">:</span>         <span class="s1">&#39;Weight&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()})</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">31</span><span class="p">]:</span> 
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>        <span class="n">Height</span>            <span class="n">Weight</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>       <span class="n">my_func</span>      <span class="nb">sum</span> <span class="o">&lt;</span><span class="k">lambda</span><span class="o">&gt;</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="n">Gender</span>                          
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="n">Female</span>     <span class="n">Low</span>  <span class="mf">21014.0</span>     <span class="mf">63.0</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="n">Male</span>      <span class="n">High</span>   <span class="mf">8854.9</span>     <span class="mf">89.0</span>
+</code></pre></div>
+<p>另外需要注意，使用对一个或者多个列使用单个聚合的时候，重命名需要加方括号，否则就不知道是新的名字还是手误输错的内置函数字符串：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">([(</span><span class="s1">&#39;my_sum&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)])</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">32</span><span class="p">]:</span> 
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>         <span class="n">Height</span>  <span class="n">Weight</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>         <span class="n">my_sum</span>  <span class="n">my_sum</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="n">Gender</span>                 
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="n">Female</span>  <span class="mf">21014.0</span>  <span class="mf">6469.0</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="n">Male</span>     <span class="mf">8854.9</span>  <span class="mf">3929.0</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Height&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;my_func&#39;</span><span class="p">,</span> <span class="n">my_func</span><span class="p">),</span> <span class="s1">&#39;sum&#39;</span><span class="p">],</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">....</span><span class="p">:</span>         <span class="s1">&#39;Weight&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;range&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())]})</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">33</span><span class="p">]:</span> 
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>        <span class="n">Height</span>          <span class="n">Weight</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>       <span class="n">my_func</span>      <span class="nb">sum</span>  <span class="nb">range</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="n">Gender</span>                        
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="n">Female</span>     <span class="n">Low</span>  <span class="mf">21014.0</span>   <span class="mf">63.0</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="n">Male</span>      <span class="n">High</span>   <span class="mf">8854.9</span>   <span class="mf">89.0</span>
+</code></pre></div>
+<h2 id="_3">三、变换和过滤</h2>
+<h3 id="1-transform">1. 变换函数与 transform 方法</h3>
+<p>变换函数的返回值为同长度的序列，最常用的内置变换函数是累计函数： <code>cumcount/cumsum/cumprod/cummax/cummin</code> ，它们的使用方式和聚合函数类似，只不过完成的是组内累计操作。此外在 <code>groupby</code> 对象上还定义了填充类和滑窗类的变换函数，这些函数的一般形式将会分别在第七章和第十章中讨论，此处略过。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">cummax</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> 
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>   <span class="n">Height</span>  <span class="n">Weight</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="mi">0</span>   <span class="mf">158.9</span>    <span class="mf">46.0</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="mi">1</span>   <span class="mf">166.5</span>    <span class="mf">70.0</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="mi">2</span>   <span class="mf">188.9</span>    <span class="mf">89.0</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="mi">3</span>     <span class="n">NaN</span>    <span class="mf">46.0</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="mi">4</span>   <span class="mf">188.9</span>    <span class="mf">89.0</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>在 <code>groupby</code> 对象中， <code>rank</code> 方法也是一个实用的变换函数，请查阅它的功能并给出一个使用的例子。</p>
+</p>
+</div>
+<p>当用自定义变换时需要使用 <code>transform</code> 方法，被调用的自定义函数， 其传入值为数据源的序列 ，与 <code>agg</code> 的传入类型是一致的，其最后的返回结果是行列索引与数据源一致的 <code>DataFrame</code> 。</p>
+<p>现对身高和体重进行分组标准化，即减去组均值后除以组的标准差：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">35</span><span class="p">]:</span> 
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>     <span class="n">Height</span>    <span class="n">Weight</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="mi">0</span> <span class="o">-</span><span class="mf">0.058760</span> <span class="o">-</span><span class="mf">0.354888</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="mi">1</span> <span class="o">-</span><span class="mf">1.010925</span> <span class="o">-</span><span class="mf">0.355000</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="mi">2</span>  <span class="mf">2.167063</span>  <span class="mf">2.089498</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="mi">3</span>       <span class="n">NaN</span> <span class="o">-</span><span class="mf">1.279789</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="mi">4</span>  <span class="mf">0.053133</span>  <span class="mf">0.159631</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>对于 <code>transform</code> 方法无法像 <code>agg</code> 一样，通过传入字典来对指定列使用特定的变换，如果需要在一次 <code>transform</code> 的调用中实现这种功能，请给出解决方案。</p>
+</p>
+</div>
+<p>前面提到了 <code>transform</code> 只能返回同长度的序列，但事实上还可以返回一个标量，这会使得结果被广播到其所在的整个组，这种 标量广播 的技巧在特征工程中是非常常见的。例如，构造两列新特征来分别表示样本所在性别组的身高均值和体重均值：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># 传入返回标量的函数也是可以的</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> 
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>      <span class="n">Height</span>     <span class="n">Weight</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="mi">0</span>  <span class="mf">159.19697</span>  <span class="mf">47.918519</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="mi">1</span>  <span class="mf">173.62549</span>  <span class="mf">72.759259</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="mi">2</span>  <span class="mf">173.62549</span>  <span class="mf">72.759259</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="mi">3</span>  <span class="mf">159.19697</span>  <span class="mf">47.918519</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="mi">4</span>  <span class="mf">173.62549</span>  <span class="mf">72.759259</span>
+</code></pre></div>
+<h3 id="2_1">2. 组索引与过滤</h3>
+<p>在上一章中介绍了索引的用法，那么索引和过滤有什么区别呢？</p>
+<p>过滤在分组中是对于组的过滤，而索引是对于行的过滤，在第二章中的返回值，无论是布尔列表还是元素列表或者位置列表，本质上都是对于行的筛选，即如果符合筛选条件的则选入结果表，否则不选入。</p>
+<p>组过滤作为行过滤的推广，指的是如果对一个组的全体所在行进行统计的结果返回 <code>True</code> 则会被保留， <code>False</code> 则该组会被过滤，最后把所有未被过滤的组其对应的所在行拼接起来作为 <code>DataFrame</code> 返回。</p>
+<p>在 <code>groupby</code> 对象中，定义了 <code>filter</code> 方法进行组的筛选，其中自定义函数的输入参数为数据源构成的 <code>DataFrame</code> 本身，在之前例子中定义的 <code>groupby</code> 对象中，传入的就是 <code>df[['Height', 'Weight']]</code> ，因此所有表方法和属性都可以在自定义函数中相应地使用，同时只需保证自定义函数的返回为布尔值即可。</p>
+<p>例如，在原表中通过过滤得到所有容量大于 100 的组：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> 
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>   <span class="n">Height</span>  <span class="n">Weight</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="mi">0</span>   <span class="mf">158.9</span>    <span class="mf">46.0</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="mi">3</span>     <span class="n">NaN</span>    <span class="mf">41.0</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="mi">5</span>   <span class="mf">158.0</span>    <span class="mf">51.0</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="mi">6</span>   <span class="mf">162.5</span>    <span class="mf">52.0</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="mi">7</span>   <span class="mf">161.9</span>    <span class="mf">50.0</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>从概念上说，索引功能是组过滤功能的子集，请使用 <code>filter</code> 函数完成 <code>loc[.]</code> 的功能，这里假设 ” <code>.</code> “是元素列表。</p>
+</p>
+</div>
+<h2 id="_4">四、跨列分组</h2>
+<h3 id="1-apply">1. apply 的引入</h3>
+<p>之前几节介绍了三大分组操作，但事实上还有一种常见的分组场景，无法用前面介绍的任何一种方法处理，例如现在如下定义身体质量指数 BMI：</p>
+<p>其中体重和身高的单位分别为千克和米，需要分组计算组 BMI 的均值。</p>
+<p>首先，这显然不是过滤操作，因此 <code>filter</code> 不符合要求；其次，返回的均值是标量而不是序列，因此 <code>transform</code> 不符合要求；最后，似乎使用 <code>agg</code> 函数能够处理，但是之前强调过聚合函数是逐列处理的，而不能够 多列数据同时处理 。由此，引出了 <code>apply</code> 函数来解决这一问题。</p>
+<h3 id="2-apply">2. apply 的使用</h3>
+<p>在设计上， <code>apply</code> 的自定义函数传入参数与 <code>filter</code> 完全一致，只不过后者只允许返回布尔值。现如下解决上述计算问题：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">BMI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="o">....</span><span class="p">:</span>     <span class="n">Height</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>   <span class="o">....</span><span class="p">:</span>     <span class="n">Weight</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>   <span class="o">....</span><span class="p">:</span>     <span class="n">BMI_value</span> <span class="o">=</span> <span class="n">Weight</span><span class="o">/</span><span class="n">Height</span><span class="o">**</span><span class="mi">2</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">BMI_value</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">BMI</span><span class="p">)</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span> 
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="n">Gender</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="n">Female</span>    <span class="mf">18.860930</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="n">Male</span>      <span class="mf">24.318654</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>除了返回标量之外， <code>apply</code> 方法还可以返回一维 <code>Series</code> 和二维 <code>DataFrame</code> ，但它们产生的数据框维数和多级索引的层数应当如何变化？下面举三组例子就非常容易明白结果是如何生成的：</p>
+<p>【a】标量情况：结果得到的是 <code>Series</code> ，索引与 <code>agg</code> 的结果一致</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span><span class="s1">&#39;Test_Number&#39;</span><span class="p">])[[</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span><span class="s1">&#39;Weight&#39;</span><span class="p">]]</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> 
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="n">Gender</span>  <span class="n">Test_Number</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="n">Female</span>  <span class="mi">1</span>              <span class="mi">0</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>        <span class="mi">2</span>              <span class="mi">0</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>        <span class="mi">3</span>              <span class="mi">0</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="n">Male</span>    <span class="mi">1</span>              <span class="mi">0</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>        <span class="mi">2</span>              <span class="mi">0</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>        <span class="mi">3</span>              <span class="mi">0</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># 虽然是列表，但是作为返回值仍然看作标量</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="n">Out</span><span class="p">[</span><span class="mi">42</span><span class="p">]:</span> 
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="n">Gender</span>  <span class="n">Test_Number</span>
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="n">Female</span>  <span class="mi">1</span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>        <span class="mi">2</span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>        <span class="mi">3</span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="n">Male</span>    <span class="mi">1</span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>        <span class="mi">2</span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>        <span class="mi">3</span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a><span class="n">dtype</span><span class="p">:</span> <span class="nb">object</span>
+</code></pre></div>
+<p>【b】 <code>Series</code> 情况：得到的是 <code>DataFrame</code> ，行索引与标量情况一致，列索引为 <code>Series</code> 的索引</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]))</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> 
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>                    <span class="n">a</span>  <span class="n">b</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">Gender</span> <span class="n">Test_Number</span>      
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="n">Female</span> <span class="mi">1</span>            <span class="mi">0</span>  <span class="mi">0</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>       <span class="mi">2</span>            <span class="mi">0</span>  <span class="mi">0</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>       <span class="mi">3</span>            <span class="mi">0</span>  <span class="mi">0</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="n">Male</span>   <span class="mi">1</span>            <span class="mi">0</span>  <span class="mi">0</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>       <span class="mi">2</span>            <span class="mi">0</span>  <span class="mi">0</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>       <span class="mi">3</span>            <span class="mi">0</span>  <span class="mi">0</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>请尝试在 <code>apply</code> 传入的自定义函数中，根据组的某些特征返回相同长度但索引不同的 <code>Series</code> ，会报错吗？</p>
+</p>
+</div>
+<p>【c】 <code>DataFrame</code> 情况：得到的是 <code>DataFrame</code> ，行索引最内层在每个组原先 <code>agg</code> 的结果索引上，再加一层返回的 <code>DataFrame</code> 行索引，同时分组结果 <code>DataFrame</code> 的列索引和返回的 <code>DataFrame</code> 列索引一致。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">gb</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="o">....</span><span class="p">:</span>                                 <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>   <span class="o">....</span><span class="p">:</span>                                 <span class="n">columns</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([(</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">),(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">)])))</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">44</span><span class="p">]:</span> 
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>                        <span class="n">w</span>    <span class="n">y</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>                        <span class="n">x</span>    <span class="n">z</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="n">Gender</span> <span class="n">Test_Number</span>            
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="n">Female</span> <span class="mi">1</span>           <span class="n">a</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>                   <span class="n">b</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>       <span class="mi">2</span>           <span class="n">a</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>                   <span class="n">b</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>       <span class="mi">3</span>           <span class="n">a</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>                   <span class="n">b</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="n">Male</span>   <span class="mi">1</span>           <span class="n">a</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>                   <span class="n">b</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>       <span class="mi">2</span>           <span class="n">a</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>                   <span class="n">b</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>       <span class="mi">3</span>           <span class="n">a</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+<a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>                   <span class="n">b</span>  <span class="mf">1.0</span>  <span class="mf">1.0</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>请尝试在 <code>apply</code> 传入的自定义函数中，根据组的某些特征返回相同大小但列索引不同的 <code>DataFrame</code> ，会报错吗？如果只是行索引不同，会报错吗？</p>
+</p>
+</div>
+<p>最后需要强调的是， <code>apply</code> 函数的灵活性是以牺牲一定性能为代价换得的，除非需要使用跨列处理的分组处理，否则应当使用其他专门设计的 <code>groupby</code> 对象方法，否则在性能上会存在较大的差距。同时，在使用聚合函数和变换函数时，也应当优先使用内置函数，它们经过了高度的性能优化，一般而言在速度上都会快于用自定义函数来实现。</p>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>在 <code>groupby</code> 对象中还定义了 <code>cov</code> 和 <code>corr</code> 函数，从概念上说也属于跨列的分组处理。请利用之前定义的 <code>gb</code> 对象，使用 apply 函数实现与 <code>gb.cov()</code> 同样的功能并比较它们的性能。</p>
+</p>
+</div>
+<h2 id="_5">五、练习</h2>
+<h3 id="ex1">Ex1：汽车数据集</h3>
+<p>现有一份汽车数据集，其中 <code>Brand, Disp., HP</code> 分别代表汽车品牌、发动机蓄量、发动机输出。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/car.csv&#39;</span><span class="p">)</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> 
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>             <span class="n">Brand</span>  <span class="n">Price</span> <span class="n">Country</span>  <span class="n">Reliability</span>  <span class="n">Mileage</span>   <span class="n">Type</span>  <span class="n">Weight</span>  <span class="n">Disp</span><span class="o">.</span>   <span class="n">HP</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="mi">0</span>   <span class="n">Eagle</span> <span class="n">Summit</span> <span class="mi">4</span>   <span class="mi">8895</span>     <span class="n">USA</span>          <span class="mf">4.0</span>       <span class="mi">33</span>  <span class="n">Small</span>    <span class="mi">2560</span>     <span class="mi">97</span>  <span class="mi">113</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="mi">1</span>  <span class="n">Ford</span> <span class="n">Escort</span>   <span class="mi">4</span>   <span class="mi">7402</span>     <span class="n">USA</span>          <span class="mf">2.0</span>       <span class="mi">33</span>  <span class="n">Small</span>    <span class="mi">2345</span>    <span class="mi">114</span>   <span class="mi">90</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="mi">2</span>   <span class="n">Ford</span> <span class="n">Festiva</span> <span class="mi">4</span>   <span class="mi">6319</span>   <span class="n">Korea</span>          <span class="mf">4.0</span>       <span class="mi">37</span>  <span class="n">Small</span>    <span class="mi">1845</span>     <span class="mi">81</span>   <span class="mi">63</span>
+</code></pre></div>
+<ol>
+<li>
+<p>先过滤出所属 <code>Country</code> 数超过 2 个的汽车，即若该汽车的 <code>Country</code> 在总体数据集中出现次数不超过 2 则剔除，再按 <code>Country</code> 分组计算价格均值、价格变异系数、该 <code>Country</code> 的汽车数量，其中变异系数的计算方法是标准差除以均值，并在结果中把变异系数重命名为 <code>CoV</code> 。</p>
+</li>
+<li>
+<p>按照表中位置的前三分之一、中间三分之一和后三分之一分组，统计 <code>Price</code> 的均值。</p>
+</li>
+<li>
+<p>对类型 <code>Type</code> 分组，对 <code>Price</code> 和 <code>HP</code> 分别计算最大值和最小值，结果会产生多级索引，请用下划线把多级列索引合并为单层索引。</p>
+</li>
+<li>
+<p>对类型 <code>Type</code> 分组，对 <code>HP</code> 进行组内的 <code>min-max</code> 归一化。</p>
+</li>
+<li>
+<p>对类型 <code>Type</code> 分组，计算 <code>Disp.</code> 与 <code>HP</code> 的相关系数。</p>
+</li>
+</ol>
+<h3 id="ex2-transform">Ex2：实现 transform 函数</h3>
+<ul>
+<li>
+<p><code>groupby</code> 对象的构造方法是 <code>my_groupby(df, group_cols)</code></p>
+</li>
+<li>
+<p>支持单列分组与多列分组</p>
+</li>
+<li>
+<p>支持带有标量广播的 <code>my_groupby(df)[col].transform(my_func)</code> 功能</p>
+</li>
+<li>
+<p><code>pandas</code> 的 <code>transform</code> 不能跨列计算，请支持此功能，即仍返回 <code>Series</code> 但 <code>col</code> 参数为多列</p>
+</li>
+<li>
+<p>无需考虑性能与异常处理，只需实现上述功能，在给出测试样例的同时与 <code>pandas</code> 中的 <code>transform</code> 对比结果是否一致</p>
+</li>
+</ul>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../part3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 三、索引" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              三、索引
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../part5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 五、变形" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              五、变形
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "header.autohide", "navigation.tabs", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
