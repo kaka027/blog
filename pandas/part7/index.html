@@ -1,0 +1,2164 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>七、缺失数据 - kaka's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="kaka&#39;s blog" class="md-header__button md-logo" aria-label="kaka's blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kaka's blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              七、缺失数据
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换夜晚模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换夜晚模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="切换白天模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换白天模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../programming/python/variable/" class="md-tabs__link">
+        python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../programming/web/html/" class="md-tabs__link">
+        web开发
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../part1/" class="md-tabs__link md-tabs__link--active">
+        pandas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../toolbox/mkdocs/" class="md-tabs__link">
+        工具箱
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kaka&#39;s blog" class="md-nav__button md-logo" aria-label="kaka's blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    kaka's blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/variable/" class="md-nav__link">
+        变量类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/string/" class="md-nav__link">
+        字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/tuple/" class="md-nav__link">
+        元组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/list/" class="md-nav__link">
+        列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/dict/" class="md-nav__link">
+        字典
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/set/" class="md-nav__link">
+        集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/derivation/" class="md-nav__link">
+        推导式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/operator/" class="md-nav__link">
+        运算符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/if-else/" class="md-nav__link">
+        逻辑判断
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/cycle/" class="md-nav__link">
+        循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/iterator/" class="md-nav__link">
+        迭代器/生成器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/function/" class="md-nav__link">
+        定义函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/parameter/" class="md-nav__link">
+        函数传参
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/return/" class="md-nav__link">
+        函数返回值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/partial/" class="md-nav__link">
+        偏函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/recursion/" class="md-nav__link">
+        递归
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/global/" class="md-nav__link">
+        变量作用域
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/lambda/" class="md-nav__link">
+        闭包和匿名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/built-in-func/" class="md-nav__link">
+        内置函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/decorator/" class="md-nav__link">
+        装饰器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/class/" class="md-nav__link">
+        面向对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/method/" class="md-nav__link">
+        类方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/class-attribute/" class="md-nav__link">
+        类变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/inherit/" class="md-nav__link">
+        继承
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/package/" class="md-nav__link">
+        封装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/polymorphism/" class="md-nav__link">
+        多态
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/python/module/" class="md-nav__link">
+        模块
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          web开发
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="web开发" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          web开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/html/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/css-select/" class="md-nav__link">
+        CSS选择器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/css-style/" class="md-nav__link">
+        CSS样式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/js/" class="md-nav__link">
+        JS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/JQuery/" class="md-nav__link">
+        JQuery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/mysql-install/" class="md-nav__link">
+        mysql安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/mysql-base/" class="md-nav__link">
+        mysql基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/django-create/" class="md-nav__link">
+        django创建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/ORM/" class="md-nav__link">
+        ORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/form/" class="md-nav__link">
+        模板语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/pagination/" class="md-nav__link">
+        分页
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/middleware/" class="md-nav__link">
+        中间件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/web/ajax/" class="md-nav__link">
+        Ajax
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          pandas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="pandas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          pandas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part1/" class="md-nav__link">
+        一、Python基础知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part2/" class="md-nav__link">
+        二、pandas基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part3/" class="md-nav__link">
+        三、索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part4/" class="md-nav__link">
+        四、分组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part5/" class="md-nav__link">
+        五、变形
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part6/" class="md-nav__link">
+        六、连接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          七、缺失数据
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        七、缺失数据
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、缺失值的统计和删除
+  </a>
+  
+    <nav class="md-nav" aria-label="一、缺失值的统计和删除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 缺失信息的统计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 缺失信息的删除
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、缺失值的填充和插值
+  </a>
+  
+    <nav class="md-nav" aria-label="二、缺失值的填充和插值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fillna" class="md-nav__link">
+    1. 利用 fillna 进行填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 插值函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullable" class="md-nav__link">
+    三、Nullable 类型
+  </a>
+  
+    <nav class="md-nav" aria-label="三、Nullable 类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 缺失记号及其缺陷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nullable" class="md-nav__link">
+    2. Nullable 类型的性质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 缺失数据的计算和分组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    四、练习
+  </a>
+  
+    <nav class="md-nav" aria-label="四、练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex1" class="md-nav__link">
+    Ex1：缺失值与类别的相关性检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex2" class="md-nav__link">
+    Ex2：用回归模型解决分类问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part8/" class="md-nav__link">
+        八、文本数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part9/" class="md-nav__link">
+        九、分类数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part10/" class="md-nav__link">
+        十、时序数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../answer/" class="md-nav__link">
+        参考答案
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          工具箱
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="工具箱" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          工具箱
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toolbox/mkdocs/" class="md-nav__link">
+        mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toolbox/venv/" class="md-nav__link">
+        python虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、缺失值的统计和删除
+  </a>
+  
+    <nav class="md-nav" aria-label="一、缺失值的统计和删除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 缺失信息的统计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 缺失信息的删除
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、缺失值的填充和插值
+  </a>
+  
+    <nav class="md-nav" aria-label="二、缺失值的填充和插值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fillna" class="md-nav__link">
+    1. 利用 fillna 进行填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 插值函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullable" class="md-nav__link">
+    三、Nullable 类型
+  </a>
+  
+    <nav class="md-nav" aria-label="三、Nullable 类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 缺失记号及其缺陷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nullable" class="md-nav__link">
+    2. Nullable 类型的性质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 缺失数据的计算和分组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    四、练习
+  </a>
+  
+    <nav class="md-nav" aria-label="四、练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex1" class="md-nav__link">
+    Ex1：缺失值与类别的相关性检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex2" class="md-nav__link">
+    Ex2：用回归模型解决分类问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>七、缺失数据</h1>
+
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</code></pre></div>
+<h2 id="_1">一、缺失值的统计和删除</h2>
+<h3 id="1">1. 缺失信息的统计</h3>
+<p>缺失数据可以使用 <code>isna</code> 或 <code>isnull</code> （两个函数没有区别）来查看每个单元格是否缺失，结合 <code>mean</code> 可以计算出每列缺失值的比例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/learn_pandas.csv&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">...</span><span class="p">:</span>                  <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grade&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   <span class="o">...</span><span class="p">:</span>                             <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="s1">&#39;Transfer&#39;</span><span class="p">])</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   <span class="o">...</span><span class="p">:</span> 
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> 
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>   <span class="n">Grade</span>   <span class="n">Name</span>  <span class="n">Gender</span>  <span class="n">Height</span>  <span class="n">Weight</span>  <span class="n">Transfer</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="mi">0</span>  <span class="kc">False</span>  <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>     <span class="kc">False</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="mi">1</span>  <span class="kc">False</span>  <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>     <span class="kc">False</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="mi">2</span>  <span class="kc">False</span>  <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>     <span class="kc">False</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="mi">3</span>  <span class="kc">False</span>  <span class="kc">False</span>   <span class="kc">False</span>    <span class="kc">True</span>   <span class="kc">False</span>     <span class="kc">False</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="mi">4</span>  <span class="kc">False</span>  <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>   <span class="kc">False</span>     <span class="kc">False</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># 查看缺失的比例</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> 
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">Grade</span>       <span class="mf">0.000</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">Name</span>        <span class="mf">0.000</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">Gender</span>      <span class="mf">0.000</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">Height</span>      <span class="mf">0.085</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">Weight</span>      <span class="mf">0.055</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">Transfer</span>    <span class="mf">0.060</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>如果想要查看某一列缺失或者非缺失的行，可以利用 <code>Series</code> 上的 <code>isna</code> 或者 <code>notna</code> 进行布尔索引。例如，查看身高缺失的行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Height</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> 
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="n">Grade</span>          <span class="n">Name</span>  <span class="n">Gender</span>  <span class="n">Height</span>  <span class="n">Weight</span> <span class="n">Transfer</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="mi">3</span>   <span class="n">Sophomore</span>  <span class="n">Xiaojuan</span> <span class="n">Sun</span>  <span class="n">Female</span>     <span class="n">NaN</span>    <span class="mf">41.0</span>        <span class="n">N</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="mi">12</span>     <span class="n">Senior</span>      <span class="n">Peng</span> <span class="n">You</span>  <span class="n">Female</span>     <span class="n">NaN</span>    <span class="mf">48.0</span>      <span class="n">NaN</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="mi">26</span>     <span class="n">Junior</span>     <span class="n">Yanli</span> <span class="n">You</span>  <span class="n">Female</span>     <span class="n">NaN</span>    <span class="mf">48.0</span>        <span class="n">N</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="mi">36</span>   <span class="n">Freshman</span>  <span class="n">Xiaojuan</span> <span class="n">Qin</span>    <span class="n">Male</span>     <span class="n">NaN</span>    <span class="mf">79.0</span>        <span class="n">Y</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="mi">60</span>   <span class="n">Freshman</span>    <span class="n">Yanpeng</span> <span class="n">Lv</span>    <span class="n">Male</span>     <span class="n">NaN</span>    <span class="mf">65.0</span>        <span class="n">N</span>
+</code></pre></div>
+<p>如果想要同时对几个列，检索出全部为缺失或者至少有一个缺失或者没有缺失的行，可以使用 <code>isna, notna</code> 和 <code>any, all</code> 的组合。例如，对身高、体重和转系情况这 3 列分别进行这三种情况的检索：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">sub_set</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="s1">&#39;Transfer&#39;</span><span class="p">]]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">df</span><span class="p">[</span><span class="n">sub_set</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># 全部缺失</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> 
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>      <span class="n">Grade</span>          <span class="n">Name</span> <span class="n">Gender</span>  <span class="n">Height</span>  <span class="n">Weight</span> <span class="n">Transfer</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="mi">102</span>  <span class="n">Junior</span>  <span class="n">Chengli</span> <span class="n">Zhao</span>   <span class="n">Male</span>     <span class="n">NaN</span>     <span class="n">NaN</span>      <span class="n">NaN</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">df</span><span class="p">[</span><span class="n">sub_set</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># 至少有一个缺失</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> 
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">Grade</span>           <span class="n">Name</span>  <span class="n">Gender</span>  <span class="n">Height</span>  <span class="n">Weight</span> <span class="n">Transfer</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="mi">3</span>   <span class="n">Sophomore</span>   <span class="n">Xiaojuan</span> <span class="n">Sun</span>  <span class="n">Female</span>     <span class="n">NaN</span>    <span class="mf">41.0</span>        <span class="n">N</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="mi">9</span>      <span class="n">Junior</span>        <span class="n">Juan</span> <span class="n">Xu</span>  <span class="n">Female</span>   <span class="mf">164.8</span>     <span class="n">NaN</span>        <span class="n">N</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="mi">12</span>     <span class="n">Senior</span>       <span class="n">Peng</span> <span class="n">You</span>  <span class="n">Female</span>     <span class="n">NaN</span>    <span class="mf">48.0</span>      <span class="n">NaN</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="mi">21</span>     <span class="n">Senior</span>  <span class="n">Xiaopeng</span> <span class="n">Shen</span>    <span class="n">Male</span>   <span class="mf">166.0</span>    <span class="mf">62.0</span>      <span class="n">NaN</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="mi">26</span>     <span class="n">Junior</span>      <span class="n">Yanli</span> <span class="n">You</span>  <span class="n">Female</span>     <span class="n">NaN</span>    <span class="mf">48.0</span>        <span class="n">N</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">df</span><span class="p">[</span><span class="n">sub_set</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># 没有缺失</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> 
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>       <span class="n">Grade</span>            <span class="n">Name</span>  <span class="n">Gender</span>  <span class="n">Height</span>  <span class="n">Weight</span> <span class="n">Transfer</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="mi">0</span>   <span class="n">Freshman</span>    <span class="n">Gaopeng</span> <span class="n">Yang</span>  <span class="n">Female</span>   <span class="mf">158.9</span>    <span class="mf">46.0</span>        <span class="n">N</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="mi">1</span>   <span class="n">Freshman</span>  <span class="n">Changqiang</span> <span class="n">You</span>    <span class="n">Male</span>   <span class="mf">166.5</span>    <span class="mf">70.0</span>        <span class="n">N</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="mi">2</span>     <span class="n">Senior</span>         <span class="n">Mei</span> <span class="n">Sun</span>    <span class="n">Male</span>   <span class="mf">188.9</span>    <span class="mf">89.0</span>        <span class="n">N</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="mi">4</span>  <span class="n">Sophomore</span>     <span class="n">Gaojuan</span> <span class="n">You</span>    <span class="n">Male</span>   <span class="mf">174.0</span>    <span class="mf">74.0</span>        <span class="n">N</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="mi">5</span>   <span class="n">Freshman</span>     <span class="n">Xiaoli</span> <span class="n">Qian</span>  <span class="n">Female</span>   <span class="mf">158.0</span>    <span class="mf">51.0</span>        <span class="n">N</span>
+</code></pre></div>
+<h3 id="2">2. 缺失信息的删除</h3>
+<p>数据处理中经常需要根据缺失值的大小、比例或其他特征来进行行样本或列特征的删除， <code>pandas</code> 中提供了 <code>dropna</code> 函数来进行操作。</p>
+<p><code>dropna</code> 的主要参数为轴方向 <code>axis</code> （默认为 0，即删除行）、删除方式 <code>how</code> 、删除的非缺失值个数阈值 <code>thresh</code> （ 非缺失值 没有达到这个数量的相应维度会被删除）、备选的删除子集 <code>subset</code> ，其中 <code>how</code> 主要有 <code>any</code> 和 <code>all</code> 两种参数可以选择。</p>
+<p>例如，删除身高体重至少有一个缺失的行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">])</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="p">(</span><span class="mi">174</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+<p>例如，删除超过 15 个缺失值的列：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># 身高被删除</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span> 
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>       <span class="n">Grade</span>            <span class="n">Name</span>  <span class="n">Gender</span>  <span class="n">Weight</span> <span class="n">Transfer</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="mi">0</span>   <span class="n">Freshman</span>    <span class="n">Gaopeng</span> <span class="n">Yang</span>  <span class="n">Female</span>    <span class="mf">46.0</span>        <span class="n">N</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="mi">1</span>   <span class="n">Freshman</span>  <span class="n">Changqiang</span> <span class="n">You</span>    <span class="n">Male</span>    <span class="mf">70.0</span>        <span class="n">N</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="mi">2</span>     <span class="n">Senior</span>         <span class="n">Mei</span> <span class="n">Sun</span>    <span class="n">Male</span>    <span class="mf">89.0</span>        <span class="n">N</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="mi">3</span>  <span class="n">Sophomore</span>    <span class="n">Xiaojuan</span> <span class="n">Sun</span>  <span class="n">Female</span>    <span class="mf">41.0</span>        <span class="n">N</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="mi">4</span>  <span class="n">Sophomore</span>     <span class="n">Gaojuan</span> <span class="n">You</span>    <span class="n">Male</span>    <span class="mf">74.0</span>        <span class="n">N</span>
+</code></pre></div>
+<p>当然，不用 <code>dropna</code> 同样是可行的，例如上述的两个操作，也可以使用布尔索引来完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="p">(</span><span class="mi">174</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">15</span><span class="p">)]</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> 
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>       <span class="n">Grade</span>            <span class="n">Name</span>  <span class="n">Gender</span>  <span class="n">Weight</span> <span class="n">Transfer</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="mi">0</span>   <span class="n">Freshman</span>    <span class="n">Gaopeng</span> <span class="n">Yang</span>  <span class="n">Female</span>    <span class="mf">46.0</span>        <span class="n">N</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="mi">1</span>   <span class="n">Freshman</span>  <span class="n">Changqiang</span> <span class="n">You</span>    <span class="n">Male</span>    <span class="mf">70.0</span>        <span class="n">N</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="mi">2</span>     <span class="n">Senior</span>         <span class="n">Mei</span> <span class="n">Sun</span>    <span class="n">Male</span>    <span class="mf">89.0</span>        <span class="n">N</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="mi">3</span>  <span class="n">Sophomore</span>    <span class="n">Xiaojuan</span> <span class="n">Sun</span>  <span class="n">Female</span>    <span class="mf">41.0</span>        <span class="n">N</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="mi">4</span>  <span class="n">Sophomore</span>     <span class="n">Gaojuan</span> <span class="n">You</span>    <span class="n">Male</span>    <span class="mf">74.0</span>        <span class="n">N</span>
+</code></pre></div>
+<h2 id="_2">二、缺失值的填充和插值</h2>
+<h3 id="1-fillna">1. 利用 fillna 进行填充</h3>
+<p>在 <code>fillna</code> 中有三个参数是常用的： <code>value, method, limit</code> 。其中， <code>value</code> 为填充值，可以是标量，也可以是索引到元素的字典映射； <code>method</code> 为填充方法，有用前面的元素填充 <code>ffill</code> 和用后面的元素填充 <code>bfill</code> 两种类型， <code>limit</code> 参数表示连续缺失值的最大填充次数。</p>
+<p>下面构造一个简单的 <code>Series</code> 来说明用法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">....</span><span class="p">:</span>                <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;aaabcd&#39;</span><span class="p">))</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">s</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> 
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">a</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">a</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">a</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">b</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">c</span>    <span class="mf">2.0</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">d</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span> <span class="c1"># 用前面的值向后填充</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> 
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">a</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="n">a</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">a</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="n">b</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="n">c</span>    <span class="mf">2.0</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">d</span>    <span class="mf">2.0</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 连续出现的缺失，最多填充一次</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> 
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="n">a</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="n">a</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="n">a</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="n">b</span>    <span class="n">NaN</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="n">c</span>    <span class="mf">2.0</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="n">d</span>    <span class="mf">2.0</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># value为标量</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> 
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="n">a</span>    <span class="mf">1.5</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="n">a</span>    <span class="mf">1.0</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="n">a</span>    <span class="mf">1.5</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="n">b</span>    <span class="mf">1.5</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="n">c</span>    <span class="mf">2.0</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="n">d</span>    <span class="mf">1.5</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">fillna</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">})</span> <span class="c1"># 通过索引映射填充的值</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> 
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="n">a</span>    <span class="mf">100.0</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="n">a</span>      <span class="mf">1.0</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="n">a</span>    <span class="mf">100.0</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="n">b</span>      <span class="n">NaN</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="n">c</span>      <span class="mf">2.0</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="n">d</span>    <span class="mf">200.0</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>有时为了更加合理地填充，需要先进行分组后再操作。例如，根据年级进行身高的均值填充：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Grade&#39;</span><span class="p">)[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">....</span><span class="p">:</span>                      <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> 
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="mi">0</span>    <span class="mf">158.900000</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="mi">1</span>    <span class="mf">166.500000</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="mi">2</span>    <span class="mf">188.900000</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="mi">3</span>    <span class="mf">163.075862</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="mi">4</span>    <span class="mf">174.000000</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">Name</span><span class="p">:</span> <span class="n">Height</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">练一练<p>对一个序列以如下规则填充缺失值：如果单独出现的缺失值，就用前后均值填充，如果连续出现的缺失值就不填充，即序列 [1, NaN, 3, NaN, NaN] 填充后为[1, 2, 3, NaN, NaN]，请利用 <code>fillna</code> 函数实现。（提示：利用 <code>limit</code> 参数）</p>
+</p>
+</div>
+<h3 id="2_1">2. 插值函数</h3>
+<p>在关于 <code>interpolate</code> 函数的 <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.interpolate.html#pandas.Series.interpolate">文档</a> 描述中，列举了许多插值法，包括了大量 <code>Scipy</code> 中的方法。由于很多插值方法涉及到比较复杂的数学知识，因此这里只讨论比较常用且简单的三类情况，即线性插值、最近邻插值和索引插值。</p>
+<p>对于 <code>interpolate</code> 而言，除了插值方法（默认为 <code>linear</code> 线性插值）之外，有与 <code>fillna</code> 类似的两个常用参数，一个是控制方向的 <code>limit_direction</code> ，另一个是控制最大连续缺失值插值个数的 <code>limit</code> 。其中，限制插值的方向默认为 <code>forward</code> ，这与 <code>fillna</code> 的 <code>method</code> 中的 <code>ffill</code> 是类似的，若想要后向限制插值或者双向限制插值可以指定为 <code>backward</code> 或 <code>both</code> 。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">....</span><span class="p">:</span>                <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>   <span class="o">....</span><span class="p">:</span>                <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">values</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">])</span>
+</code></pre></div>
+<p>例如，在默认线性插值法下分别进行 <code>backward</code> 和双向限制插值，同时限制最大连续条数为 1：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;backward&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">values</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span> <span class="n">nan</span><span class="p">,</span> <span class="mf">1.</span>  <span class="p">,</span> <span class="mf">1.</span>  <span class="p">,</span>  <span class="n">nan</span><span class="p">,</span>  <span class="n">nan</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.</span>  <span class="p">,</span>  <span class="n">nan</span><span class="p">,</span>  <span class="n">nan</span><span class="p">])</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">res</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">res</span><span class="o">.</span><span class="n">values</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span> <span class="n">nan</span><span class="p">,</span> <span class="mf">1.</span>  <span class="p">,</span> <span class="mf">1.</span>  <span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span>  <span class="n">nan</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.</span>  <span class="p">,</span> <span class="mf">2.</span>  <span class="p">,</span>  <span class="n">nan</span><span class="p">])</span>
+</code></pre></div>
+<p>第二种常见的插值是最近邻插补，即缺失值的元素和离它最近的非缺失值元素一样：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">])</span>
+</code></pre></div>
+<p>最后来介绍索引插值，即根据索引大小进行线性插值。例如，构造不等间距的索引进行演示：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">s</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> 
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="mi">0</span>      <span class="mf">0.0</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="mi">1</span>      <span class="n">NaN</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="mi">10</span>    <span class="mf">10.0</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span> <span class="c1"># 默认的线性插值，等价于计算中点的值</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">Out</span><span class="p">[</span><span class="mi">35</span><span class="p">]:</span> 
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="mi">0</span>      <span class="mf">0.0</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="mi">1</span>      <span class="mf">5.0</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="mi">10</span>    <span class="mf">10.0</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span> <span class="c1"># 和索引有关的线性插值，计算相应索引大小对应的值</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> 
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="mi">0</span>      <span class="mf">0.0</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="mi">1</span>      <span class="mf">1.0</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="mi">10</span>    <span class="mf">10.0</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>同时，这种方法对于时间戳索引也是可以使用的，有关时间序列的其他话题会在第十章进行讨论，这里举一个简单的例子：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">....</span><span class="p">:</span>               <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;20200101&#39;</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>   <span class="o">....</span><span class="p">:</span>                                     <span class="s1">&#39;20200102&#39;</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>   <span class="o">....</span><span class="p">:</span>                                     <span class="s1">&#39;20200111&#39;</span><span class="p">]))</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">s</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> 
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>     <span class="mf">0.0</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>     <span class="n">NaN</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>    <span class="mf">10.0</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span> 
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>     <span class="mf">0.0</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>     <span class="mf">5.0</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>    <span class="mf">10.0</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="n">Out</span><span class="p">[</span><span class="mi">40</span><span class="p">]:</span> 
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>     <span class="mf">0.0</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>     <span class="mf">1.0</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>    <span class="mf">10.0</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">关于 polynomial 和 spline 插值的注意事项<p>在 <code>interpolate</code> 中如果选用 <code>polynomial</code> 的插值方法，它内部调用的是 <code>scipy.interpolate.interp1d(*,*,kind=order)</code> ，这个函数内部调用的是 <code>make_interp_spline</code> 方法，因此其实是样条插值而不是类似于 <code>numpy</code> 中的 <code>polyfit</code> 多项式拟合插值；而当选用 <code>spline</code> 方法时， <code>pandas</code> 调用的是 <code>scipy.interpolate.UnivariateSpline</code> 而不是普通的样条插值。这一部分的文档描述比较混乱，而且这种参数的设计也是不合理的，当使用这两类插值方法时，用户一定要小心谨慎地根据自己的实际需求选取恰当的插值方法。</p>
+</p>
+</div>
+<h2 id="nullable">三、Nullable 类型</h2>
+<h3 id="1_1">1. 缺失记号及其缺陷</h3>
+<p>在 <code>python</code> 中的缺失值用 <code>None</code> 表示，该元素除了等于自己本身之外，与其他任何元素不相等：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="kc">None</span> <span class="o">==</span> <span class="kc">None</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="kc">True</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="kc">None</span> <span class="o">==</span> <span class="kc">False</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="kc">None</span> <span class="o">==</span> <span class="p">[]</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="kc">None</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">Out</span><span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="kc">False</span>
+</code></pre></div>
+<p>在 <code>numpy</code> 中利用 <code>np.nan</code> 来表示缺失值，该元素除了不和其他任何元素相等之外，和自身的比较结果也返回 <code>False</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">==</span> <span class="kc">None</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">==</span> <span class="kc">False</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="kc">False</span>
+</code></pre></div>
+<p>值得注意的是，虽然在对缺失序列或表格的元素进行比较操作的时候， <code>np.nan</code> 的对应位置会返回 <code>False</code> ，但是在使用 <code>equals</code> 函数进行两张表或两个序列的相同性检验时，会自动跳过两侧表都是缺失值的位置，直接返回 <code>True</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">s1</span> <span class="o">==</span> <span class="mi">1</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">51</span><span class="p">]:</span> 
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="mi">0</span>     <span class="kc">True</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="mi">1</span>    <span class="kc">False</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">dtype</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">s1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="n">s1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="n">Out</span><span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kc">True</span>
+</code></pre></div>
+<p>在时间序列的对象中， <code>pandas</code> 利用 <code>pd.NaT</code> 来指代缺失值，它的作用和 <code>np.nan</code> 是一致的（时间序列的对象和构造将在第十章讨论）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">([</span><span class="s1">&#39;30s&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span> <span class="c1"># Timedelta中的NaT</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">TimedeltaIndex</span><span class="p">([</span><span class="s1">&#39;0 days 00:00:30&#39;</span><span class="p">,</span> <span class="n">NaT</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;timedelta64[ns]&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;20200101&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span> <span class="c1"># Datetime中的NaT</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">DatetimeIndex</span><span class="p">([</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;NaT&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<p>那么为什么要引入 <code>pd.NaT</code> 来表示时间对象中的缺失呢？仍然以 <code>np.nan</code> 的形式存放会有什么问题？在 <code>pandas</code> 中可以看到 <code>object</code> 类型的对象，而 <code>object</code> 是一种混杂对象类型，如果出现了多个类型的元素同时存储在 <code>Series</code> 中，它的类型就会变成 <code>object</code> 。例如，同时存放整数和字符串的列表：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">])</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">56</span><span class="p">]:</span> 
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="mi">0</span>      <span class="mi">1</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="mi">1</span>    <span class="n">two</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">dtype</span><span class="p">:</span> <span class="nb">object</span>
+</code></pre></div>
+<p><code>NaT</code> 问题的根源来自于 <code>np.nan</code> 的本身是一种浮点类型，而如果浮点和时间类型混合存储，如果不设计新的内置缺失类型来处理，就会变成含糊不清的 <code>object</code> 类型，这显然是不希望看到的。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="nb">float</span>
+</code></pre></div>
+<p>同时，由于 <code>np.nan</code> 的浮点性质，如果在一个整数的 <code>Series</code> 中出现缺失，那么其类型会转变为 <code>float64</code> ；而如果在一个布尔类型的序列中出现缺失，那么其类型就会转为 <code>object</code> 而不是 <code>bool</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span><span class="o">.</span><span class="n">dtype</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span><span class="o">.</span><span class="n">dtype</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>因此，在进入 <code>1.0.0</code> 版本后， <code>pandas</code> 尝试设计了一种新的缺失类型 <code>pd.NA</code> 以及三种 <code>Nullable</code> 序列类型来应对这些缺陷，它们分别是 <code>Int, boolean</code> 和 <code>string</code> 。</p>
+<h3 id="2-nullable">2. Nullable 类型的性质</h3>
+<p>从字面意义上看 <code>Nullable</code> 就是可空的，言下之意就是序列类型不受缺失值的影响。例如，在上述三个 <code>Nullable</code> 类型中存储缺失值，都会转为 <code>pandas</code> 内置的 <code>pd.NA</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;Int64&#39;</span><span class="p">)</span> <span class="c1"># &quot;i&quot;是大写的</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> 
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="mi">0</span>    <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="mi">1</span>       <span class="mi">1</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">Int64</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;boolean&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">61</span><span class="p">]:</span> 
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="mi">0</span>    <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="mi">1</span>    <span class="kc">True</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">boolean</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">&#39;my_str&#39;</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">62</span><span class="p">]:</span> 
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="mi">0</span>      <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="mi">1</span>    <span class="n">my_str</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">string</span>
+</code></pre></div>
+<p>在 <code>Int</code> 的序列中，返回的结果会尽可能地成为 <code>Nullable</code> 的类型：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;Int64&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">63</span><span class="p">]:</span> 
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="mi">0</span>    <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="mi">1</span>       <span class="mi">1</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">Int64</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;Int64&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">64</span><span class="p">]:</span> 
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="mi">0</span>    <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="mi">1</span>    <span class="kc">True</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">boolean</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;Int64&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="c1"># 只能是浮点</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">65</span><span class="p">]:</span> 
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="mi">0</span>    <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="mi">1</span>     <span class="mf">0.0</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">Float64</span>
+</code></pre></div>
+<p>对于 <code>boolean</code> 类型的序列而言，其和 <code>bool</code> 序列的行为主要有两点区别：</p>
+<p>第一点是带有缺失的布尔列表无法进行索引器中的选择，而 <code>boolean</code> 会把缺失值看作 <code>False</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="n">s_bool</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">68</span><span class="p">]:</span> <span class="n">s_boolean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;boolean&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># s[s_bool] # 报错</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">69</span><span class="p">]:</span> <span class="n">s</span><span class="p">[</span><span class="n">s_boolean</span><span class="p">]</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">69</span><span class="p">]:</span> 
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="mi">0</span>    <span class="n">a</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="n">dtype</span><span class="p">:</span> <span class="nb">object</span>
+</code></pre></div>
+<p>第二点是在进行逻辑运算时， <code>bool</code> 类型在缺失处返回的永远是 <code>False</code> ，而 <code>boolean</code> 会根据逻辑运算是否能确定唯一结果来返回相应的值。那什么叫能否确定唯一结果呢？举个简单例子： <code>True | pd.NA</code> 中无论缺失值为什么值，必然返回 <code>True</code> ； <code>False | pd.NA</code> 中的结果会根据缺失值取值的不同而变化，此时返回 <code>pd.NA</code> ； <code>False &amp; pd.NA</code> 中无论缺失值为什么值，必然返回 <code>False</code> 。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="n">s_boolean</span> <span class="o">&amp;</span> <span class="kc">True</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">70</span><span class="p">]:</span> 
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="mi">0</span>    <span class="kc">True</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="mi">1</span>    <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">boolean</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">71</span><span class="p">]:</span> <span class="n">s_boolean</span> <span class="o">|</span> <span class="kc">True</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">71</span><span class="p">]:</span> 
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="mi">0</span>    <span class="kc">True</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="mi">1</span>    <span class="kc">True</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">boolean</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">72</span><span class="p">]:</span> <span class="o">~</span><span class="n">s_boolean</span> <span class="c1"># 取反操作同样是无法唯一地判断缺失结果</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">72</span><span class="p">]:</span> 
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="mi">0</span>    <span class="kc">False</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="mi">1</span>     <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>关于 <code>string</code> 类型的具体性质将在下一章文本数据中进行讨论。</p>
+<p>一般在实际数据处理时，可以在数据集读入后，先通过 <code>convert_dtypes</code> 转为 <code>Nullable</code> 类型：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">73</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/learn_pandas.csv&#39;</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">74</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">()</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">75</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="n">Out</span><span class="p">[</span><span class="mi">75</span><span class="p">]:</span> 
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="n">School</span>          <span class="n">string</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="n">Grade</span>           <span class="n">string</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="n">Name</span>            <span class="n">string</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="n">Gender</span>          <span class="n">string</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="n">Height</span>         <span class="n">Float64</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="n">Weight</span>           <span class="n">Int64</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="n">Transfer</span>        <span class="n">string</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="n">Test_Number</span>      <span class="n">Int64</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="n">Test_Date</span>       <span class="n">string</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="n">Time_Record</span>     <span class="n">string</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="n">dtype</span><span class="p">:</span> <span class="nb">object</span>
+</code></pre></div>
+<h3 id="3">3. 缺失数据的计算和分组</h3>
+<p>当调用函数 <code>sum, prod</code> 使用加法和乘法的时候，缺失数据等价于被分别视作 0 和 1，即不改变原来的计算结果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="mf">14.0</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="n">In</span> <span class="p">[</span><span class="mi">78</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="n">Out</span><span class="p">[</span><span class="mi">78</span><span class="p">]:</span> <span class="mf">120.0</span>
+</code></pre></div>
+<p>当使用累计函数时，会自动跳过缺失值所处的位置：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">79</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">79</span><span class="p">]:</span> 
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="mi">0</span>     <span class="mf">2.0</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="mi">1</span>     <span class="mf">5.0</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="mi">2</span>     <span class="n">NaN</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="mi">3</span>     <span class="mf">9.0</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="mi">4</span>    <span class="mf">14.0</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>当进行单个标量运算的时候，除了 <code>np.nan ** 0</code> 和 <code>1 ** np.nan</code> 这两种情况为确定的值之外，所有运算结果全为缺失（ <code>pd.NA</code> 的行为与此一致 ），并且 <code>np.nan</code> 在比较操作时一定返回 <code>False</code> ，而 <code>pd.NA</code> 返回 <code>pd.NA</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">80</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">==</span> <span class="mi">0</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">80</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">81</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span> <span class="o">==</span> <span class="mi">0</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="n">Out</span><span class="p">[</span><span class="mi">81</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">82</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">82</span><span class="p">]:</span> <span class="kc">False</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="n">In</span> <span class="p">[</span><span class="mi">83</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="n">Out</span><span class="p">[</span><span class="mi">83</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">NA</span><span class="o">&gt;</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="n">In</span> <span class="p">[</span><span class="mi">84</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">84</span><span class="p">]:</span> <span class="n">nan</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="n">In</span> <span class="p">[</span><span class="mi">85</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="n">Out</span><span class="p">[</span><span class="mi">85</span><span class="p">]:</span> <span class="n">nan</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="n">In</span> <span class="p">[</span><span class="mi">86</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="n">Out</span><span class="p">[</span><span class="mi">86</span><span class="p">]:</span> <span class="n">nan</span>
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="n">In</span> <span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">**</span> <span class="mi">0</span>
+<a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="n">Out</span><span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="mf">1.0</span>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>
+<a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a><span class="n">In</span> <span class="p">[</span><span class="mi">88</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span> <span class="o">**</span> <span class="mi">0</span>
+<a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a><span class="n">Out</span><span class="p">[</span><span class="mi">88</span><span class="p">]:</span> <span class="mi">1</span>
+<a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>
+<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="n">In</span> <span class="p">[</span><span class="mi">89</span><span class="p">]:</span> <span class="mi">1</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="n">Out</span><span class="p">[</span><span class="mi">89</span><span class="p">]:</span> <span class="mf">1.0</span>
+<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a>
+<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="n">In</span> <span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="mi">1</span> <span class="o">**</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span>
+<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a><span class="n">Out</span><span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="mi">1</span>
+</code></pre></div>
+<p>另外需要注意的是， <code>diff, pct_change</code> 这两个函数虽然功能相似，但是对于缺失的处理不同，前者凡是参与缺失计算的部分全部设为了缺失值，而后者缺失值位置会被设为 0% 的变化率：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">91</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">91</span><span class="p">]:</span> 
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="mi">0</span>    <span class="n">NaN</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="mi">1</span>    <span class="mf">1.0</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="mi">2</span>    <span class="n">NaN</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="mi">3</span>    <span class="n">NaN</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="mi">4</span>    <span class="mf">1.0</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="n">In</span> <span class="p">[</span><span class="mi">92</span><span class="p">]:</span> <span class="n">s</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="n">Out</span><span class="p">[</span><span class="mi">92</span><span class="p">]:</span> 
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="mi">0</span>         <span class="n">NaN</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="mi">1</span>    <span class="mf">0.500000</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="mi">2</span>    <span class="mf">0.000000</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="mi">3</span>    <span class="mf">0.333333</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="mi">4</span>    <span class="mf">0.250000</span>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>对于一些函数而言，缺失可以作为一个类别处理，例如在 <code>groupby, get_dummies</code> 中可以设置相应的参数来进行增加缺失类别：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">93</span><span class="p">]:</span> <span class="n">df_nan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;category&#39;</span><span class="p">:[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>   <span class="o">....</span><span class="p">:</span>                        <span class="s1">&#39;value&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]})</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">94</span><span class="p">]:</span> <span class="n">df_nan</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="n">Out</span><span class="p">[</span><span class="mi">94</span><span class="p">]:</span> 
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>  <span class="n">category</span>  <span class="n">value</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="mi">0</span>        <span class="n">a</span>      <span class="mi">1</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="mi">1</span>        <span class="n">a</span>      <span class="mi">3</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="mi">2</span>        <span class="n">b</span>      <span class="mi">5</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="mi">3</span>      <span class="n">NaN</span>      <span class="mi">7</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="mi">4</span>      <span class="n">NaN</span>      <span class="mi">9</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="n">In</span> <span class="p">[</span><span class="mi">95</span><span class="p">]:</span> <span class="n">df_nan</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">,</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>   <span class="o">....</span><span class="p">:</span>                 <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># pandas版本大于1.1.0</span>
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>   <span class="o">....</span><span class="p">:</span> 
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="n">Out</span><span class="p">[</span><span class="mi">95</span><span class="p">]:</span> 
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a><span class="n">category</span>
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a><span class="n">a</span>      <span class="mi">2</span>
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="n">b</span>      <span class="mi">5</span>
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a><span class="n">NaN</span>    <span class="mi">8</span>
+<a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a><span class="n">Name</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+<a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a>
+<a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a><span class="n">In</span> <span class="p">[</span><span class="mi">96</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df_nan</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">dummy_na</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a><span class="n">Out</span><span class="p">[</span><span class="mi">96</span><span class="p">]:</span> 
+<a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a>   <span class="n">a</span>  <span class="n">b</span>  <span class="n">NaN</span>
+<a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a><span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span>    <span class="mi">0</span>
+<a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a><span class="mi">1</span>  <span class="mi">1</span>  <span class="mi">0</span>    <span class="mi">0</span>
+<a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a><span class="mi">2</span>  <span class="mi">0</span>  <span class="mi">1</span>    <span class="mi">0</span>
+<a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a><span class="mi">3</span>  <span class="mi">0</span>  <span class="mi">0</span>    <span class="mi">1</span>
+<a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a><span class="mi">4</span>  <span class="mi">0</span>  <span class="mi">0</span>    <span class="mi">1</span>
+</code></pre></div>
+<h2 id="_3">四、练习</h2>
+<h3 id="ex1">Ex1：缺失值与类别的相关性检验</h3>
+<p>在数据处理中，含有过多缺失值的列往往会被删除，除非缺失情况与标签强相关。下面有一份关于二分类问题的数据集，其中 <code>X_1, X_2</code> 为特征变量， <code>y</code> 为二分类标签。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">97</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/missing_chi.csv&#39;</span><span class="p">)</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">98</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">98</span><span class="p">]:</span> 
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>    <span class="n">X_1</span>  <span class="n">X_2</span>  <span class="n">y</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="mi">0</span>   <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="mi">0</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="mi">1</span>   <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="mi">0</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="mi">2</span>   <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="mi">0</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="mi">3</span>  <span class="mf">43.0</span>  <span class="n">NaN</span>  <span class="mi">0</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="mi">4</span>   <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="mi">0</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="n">In</span> <span class="p">[</span><span class="mi">99</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="n">Out</span><span class="p">[</span><span class="mi">99</span><span class="p">]:</span> 
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="n">X_1</span>    <span class="mf">0.855</span>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="n">X_2</span>    <span class="mf">0.894</span>
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="n">y</span>      <span class="mf">0.000</span>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a><span class="n">In</span> <span class="p">[</span><span class="mi">100</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="n">Out</span><span class="p">[</span><span class="mi">100</span><span class="p">]:</span> 
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a><span class="mi">0</span>    <span class="mf">0.918</span>
+<a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a><span class="mi">1</span>    <span class="mf">0.082</span>
+<a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a><span class="n">Name</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<p>事实上，有时缺失值出现或者不出现本身就是一种特征，并且在一些场合下可能与标签的正负是相关的。关于缺失出现与否和标签的正负性，在统计学中可以利用卡方检验来断言它们是否存在相关性。按照特征缺失的正例、特征缺失的负例、特征不缺失的正例、特征不缺失的负例，可以分为四种情况，设它们分别对应的样例数为 。假若它们是不相关的，那么特征缺失中正例的理论值，就应该接近于特征缺失总数 总体正例的比例，即：</p>
+<p>其他的三种情况同理。现将实际值和理论值分别记作 ，那么希望下面的统计量越小越好，即代表实际值接近不相关情况的理论值：</p>
+<p>可以证明上面的统计量近似服从自由度为 的卡方分布，即 。因此，可通过计算 的概率来进行相关性的判别，一般认为当此概率小于 时缺失情况与标签正负存在相关关系，即不相关条件下的理论值与实际值相差较大。</p>
+<p>上面所说的概率即为统计学上关于 列联表检验问题的 值， 它可以通过 <code>scipy.stats.chi2.sf(S, 1)</code> 得到。请根据上面的材料，分别对 <code>X_1, X_2</code> 列进行检验。</p>
+<h3 id="ex2">Ex2：用回归模型解决分类问题</h3>
+<p><code>KNN</code> 是一种监督式学习模型，既可以解决回归问题，又可以解决分类问题。对于分类变量，利用 <code>KNN</code> 分类模型可以实现其缺失值的插补，思路是度量缺失样本的特征与所有其他样本特征的距离，当给定了模型参数 <code>n_neighbors=n</code> 时，计算离该样本距离最近的 个样本点中最多的那个类别，并把这个类别作为该样本的缺失预测类别，具体如下图所示，未知的类别被预测为黄色：</p>
+<p><img alt="img-0" src="../part7.image/img-0.png" /></p>
+<p>上面有色点的特征数据提供如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">101</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;data/color.xlsx&#39;</span><span class="p">)</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">102</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">102</span><span class="p">]:</span> 
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>    <span class="n">X1</span>   <span class="n">X2</span> <span class="n">Color</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="mi">0</span> <span class="o">-</span><span class="mf">2.5</span>  <span class="mf">2.8</span>  <span class="n">Blue</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="mi">1</span> <span class="o">-</span><span class="mf">1.5</span>  <span class="mf">1.8</span>  <span class="n">Blue</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="mi">2</span> <span class="o">-</span><span class="mf">0.8</span>  <span class="mf">2.8</span>  <span class="n">Blue</span>
+</code></pre></div>
+<p>已知待预测的样本点为 ，那么预测类别可以如下写出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">103</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">104</span><span class="p">]:</span> <span class="n">clf</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">105</span><span class="p">]:</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Color</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="n">Out</span><span class="p">[</span><span class="mi">105</span><span class="p">]:</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="n">In</span> <span class="p">[</span><span class="mi">106</span><span class="p">]:</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">]])</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="n">Out</span><span class="p">[</span><span class="mi">106</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="s1">&#39;Yellow&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>
+<p>对于回归问题而言，需要得到的是一个具体的数值，因此预测值由最近的 个样本对应的平均值获得。请把上面的这个分类问题转化为回归问题，仅使用 <code>KNeighborsRegressor</code> 来完成上述的 <code>KNeighborsClassifier</code> 功能。</p>
+</li>
+<li>
+<p>请根据第 1 问中的方法，对 <code>audit</code> 数据集中的 <code>Employment</code> 变量进行缺失值插补。</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">107</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/audit.csv&#39;</span><span class="p">)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">108</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">108</span><span class="p">]:</span> 
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>        <span class="n">ID</span>  <span class="n">Age</span> <span class="n">Employment</span>    <span class="n">Marital</span>     <span class="n">Income</span>  <span class="n">Gender</span>  <span class="n">Hours</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="mi">0</span>  <span class="mi">1004641</span>   <span class="mi">38</span>    <span class="n">Private</span>  <span class="n">Unmarried</span>   <span class="mf">81838.00</span>  <span class="n">Female</span>     <span class="mi">72</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="mi">1</span>  <span class="mi">1010229</span>   <span class="mi">35</span>    <span class="n">Private</span>     <span class="n">Absent</span>   <span class="mf">72099.00</span>    <span class="n">Male</span>     <span class="mi">30</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="mi">2</span>  <span class="mi">1024587</span>   <span class="mi">32</span>    <span class="n">Private</span>   <span class="n">Divorced</span>  <span class="mf">154676.74</span>    <span class="n">Male</span>     <span class="mi">40</span>
+</code></pre></div>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../part6/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 六、连接" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              六、连接
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../part8/" class="md-footer__link md-footer__link--next" aria-label="下一页: 八、文本数据" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              八、文本数据
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "header.autohide", "navigation.tabs", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
